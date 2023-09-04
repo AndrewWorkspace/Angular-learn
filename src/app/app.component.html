@@ -1,34 +1,41 @@
 <div class="container">
   <h1>Angular Pipes</h1>
-  <!-- Numbers -->
   <h2>Numbers</h2>
   <p>{{e}}</p>
   <p>{{e | number:'1.1-5' }}</p>
   <p>{{e | number:'3.1-2' }}</p>
   <p>{{e | number:'1.0-0' }}</p>
 
-
-  <!-- String -->
   <h2>String</h2>
   <p>{{str}}</p>
   <p>{{str | titlecase}}</p>
   <p>{{str | titlecase | slice:1:5}}</p>
   <p>{{str | titlecase | slice:1:-2}}</p>
 
-  <!-- Date -->
   <h2>Date</h2>
   <p>{{date}}</p>
   <p>{{date | date}}</p>
   <p>{{date | date:"MMM dd, yyyy 'at' hh:mm a" }}</p>
   <p>{{date | date:'fullDate'}}</p>
 
-  <!-- Float -->
+  <h2>Float</h2>
   <p>{{float}}</p>
   <p>{{float | currency}}</p>
   <p>{{float | percent:'2.0'}}</p>
 
-  <!-- Object  -->
+  <h2>Object print</h2>
   <pre>{{obj | json}}</pre>
+  <p>{{obj | json}}</p>
+
+  <h2>Custom Pipe</h2>
+  <p>{{10 | mult}}</p>
+  <p>{{10 | mult:2}}</p>
+  <p>{{10 | mult:3}}</p>
+  <p>{{10 | mult:5}}</p>
+  <p>{{10 | mult:8}}</p>
+  <p>{{10 | mult:13}}</p>
+
+
 
 </div>
 <!--https://angular.io/api?type=pipe-->
