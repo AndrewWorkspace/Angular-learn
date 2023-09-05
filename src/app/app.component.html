@@ -1,4 +1,26 @@
 <div class="container">
+
+
+  <button class="btn" (click)="searchField = 'title'" >Title</button>
+  <button class="btn" (click)="searchField = 'text'">Text</button>
+
+  <div class="form-wrap">
+    <input type="text" [(ngModel)]="search">
+  </div>
+  <div
+    class="card"
+    *ngFor="let post of posts | filter:search"
+    id="{{post.id}}"
+    >
+    <h2>{{post.title}}</h2>
+    <p>{{post.text}}</p>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="container">
   <h1>Angular Pipes</h1>
   <h2>Numbers</h2>
   <p>{{e}}</p>
@@ -36,6 +58,9 @@
   <p>{{10 | mult:13}}</p>
 
 
-
+  <!--https://angular.io/api?type=pipe-->
 </div>
-<!--https://angular.io/api?type=pipe-->
+
+
+
+

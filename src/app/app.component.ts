@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {PostService} from "./services/post.services";
+import {Post} from "../models/post.model";
 
 @Component({
   selector: 'app-root',
@@ -6,12 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+
   title = 'start-app';
   e: number = Math.E;
   str: string = 'hello world';
   date: Date = new Date;
   float: number = 0.42;
-
+  search: any = '';
   obj: object = {
     a: 1,
     b: {
@@ -22,5 +26,16 @@ export class AppComponent {
       }
     }
   }
+  searchField: string = 'title'
+  posts: Post[] = [];
+
+
+  constructor(private postService: PostService) {}
+
+  ngOnInit(){
+   this.posts = this.postService.getPosts()
+  }
+
 }
+
 
