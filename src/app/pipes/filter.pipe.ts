@@ -3,7 +3,8 @@ import {Post} from "../../models/post.model";
 
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  // pure: false - Урезает оптимизацию, но реагирует на динамическое добавление поста
 })
 export class FilterPipe implements PipeTransform {
 

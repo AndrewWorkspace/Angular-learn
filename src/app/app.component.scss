@@ -32,3 +32,13 @@ input{
     box-shadow: 0px 0px 7px 0px rgba(70,133,201,1);
   }
 }
+
+.box{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  &__group{
+    display: flex;
+    align-items: center;
+  }
+}

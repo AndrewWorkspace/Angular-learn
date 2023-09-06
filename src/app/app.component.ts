@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {PostService} from "./services/post.services";
 import {Post} from "../models/post.model";
 
@@ -29,11 +29,34 @@ export class AppComponent {
   searchField: string = 'title'
   posts: Post[] = [];
 
+  p: Promise<string> = new Promise<string>(resolve => {
+    setTimeout(() =>{
+      resolve('resolved')
+    },4000)
+  })
+
 
   constructor(private postService: PostService) {}
 
+
+
   ngOnInit(){
    this.posts = this.postService.getPosts()
+  }
+
+
+
+  addPost(){
+   function randomNum(min:number,max:number){
+     return Math.floor(Math.random() * (max - min) + min)
+    }
+
+
+    this.posts.push({
+      id: randomNum(1,5000),
+      title: 'Angular',
+      text: 'New Post Ttext'
+    })
   }
 
 }

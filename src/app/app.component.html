@@ -1,12 +1,27 @@
 <div class="container">
 
+  <h2>Pipes Async</h2>
+  <p>{{p | async}}</p>
 
-  <button class="btn" (click)="searchField = 'title'" >Title</button>
-  <button class="btn" (click)="searchField = 'text'">Text</button>
+
+  <hr style="margin:40px 0;">
+
+  <h2>Filter Pipes</h2>
+  <div class="box">
+    <h2>Filter posts by: {{searchField | titlecase }} </h2>
+    <div class="box__group">
+      <button class="btn" (click)="searchField = 'title'" >Title</button>
+      <button class="btn" (click)="searchField = 'text'">Text</button>
+    </div>
+  </div>
+
+  <hr>
+  <button class="btn" (click)="addPost()">Add Post</button>
 
   <div class="form-wrap">
     <input type="text" [(ngModel)]="search">
   </div>
+
   <div
     class="card"
     *ngFor="let post of posts | filter:search:searchField"
